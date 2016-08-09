@@ -1,0 +1,20 @@
+{
+  "name": "better-combine-reducers",
+  "version": "1.0.0",
+  "description": "Better redux combineReducers, initial state injectable.",
+  "main": "./index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "author": "Shin Suzuki <shinout310@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "index.js"
+  ],
+  "devDependencies": {
+    "redux": "^3.5.2",
+    "mocha": "^3.0.2"
+  }
+}
