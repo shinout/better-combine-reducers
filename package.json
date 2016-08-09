@@ -14,7 +14,8 @@
     "index.js"
   ],
   "devDependencies": {
-    "redux": "^3.5.2",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "node-circleci-autorelease": "^2.2.0",
+    "redux": "^3.5.2"
   }
 }

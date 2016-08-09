@@ -1,0 +1,23 @@
+general:
+  branches:
+    ignore:
+      - gh-pages
+      - /release.*/
+machine:
+  environment:
+    PATH: './node_modules/.bin:$PATH'
+  pre:
+    - git config --global user.name "CircleCI"
+    - git config --global user.email "circleci@cureapp.jp"
+  node:
+    version: 6.3.1
+dependencies:
+  post:
+    - nca run nca notice update-modules
+deployment:
+  create_release_branch:
+    branch:
+      - master
+    commands:
+      - nca release --prefix v
+      - nca run nca notice gh-pages
