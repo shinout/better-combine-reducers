@@ -5,11 +5,13 @@
   "main": "./index.js",
   "scripts": {
     "flow-check": "cd test/flow-test && flow",
-    "test": "npm run flow-check && mocha test/index.spec.js"
+    "test": "npm run flow-check && npm run es5-compatibility-test && mocha test/index.spec.js",
+    "es5-compatibility-test": "acorn --ecma5 --silent index.js"
   },
   "author": "Shin Suzuki <shinout310@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "acorn": "^3.3.0",
     "flow-bin": "^0.30.0",
     "flow-typed": "^2.0.0-beta.6",
     "mocha": "^3.0.2",
