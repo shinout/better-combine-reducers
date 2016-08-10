@@ -1,8 +1,12 @@
 # better-combine-reducers
 
+[![npm version](https://img.shields.io/npm/v/better-combine-reducers.svg)](https://www.npmjs.org/package/better-combine-reducers)
+[![npm downloads](https://img.shields.io/npm/dm/better-combine-reducers.svg)](https://www.npmjs.org/package/better-combine-reducers)
+
 Wrap function `combineReducers` in [Redux](redux.js.org) to set **initial state**.
 
-The concept is that **reducers should not know about the initial states**.
+# Concept
+**Reducers should not know about the initial states**.
 
 ## Redux's reducers know about the initial state
 When creating a reducer, we set default states as its default argument.
@@ -21,12 +25,12 @@ This means that initial states vary and reducers should be independent from them
 
 **This library combines reducers with initial state**.
 
-## Installation
+# Installation
 ```sh
 npm install redux better-combine-reducers
 ```
 
-## Usage
+# Usage
 ```js
 import { combineReducers } from 'redux'
 import better from 'better-combine-reducers'
@@ -41,3 +45,6 @@ const initialState = {
 
 const reducer = better(combineReducers)({ A: reducerA, B: reducerB }, initialState)
 ```
+
+## Better Module Names?
+Anyone who have an idea of better module name are welcomed write one in [#1](https://github.com/shinout/better-combine-reducers/issues/1)!
