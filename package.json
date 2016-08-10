@@ -8,11 +8,6 @@
   },
   "author": "Shin Suzuki <shinout310@gmail.com>",
   "license": "MIT",
-  "files": [
-    "README.md",
-    "LICENSE",
-    "index.js"
-  ],
   "devDependencies": {
     "mocha": "^3.0.2",
     "node-circleci-autorelease": "^2.2.0",
