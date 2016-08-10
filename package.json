@@ -4,11 +4,14 @@
   "description": "Better redux combineReducers, initial state injectable.",
   "main": "./index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "flow-check": "cd test/flow-test && flow",
+    "test": "npm run flow-check && mocha test/index.spec.js"
   },
   "author": "Shin Suzuki <shinout310@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "flow-bin": "^0.30.0",
+    "flow-typed": "^2.0.0-beta.6",
     "mocha": "^3.0.2",
     "node-circleci-autorelease": "^2.2.0",
     "redux": "^3.5.2"

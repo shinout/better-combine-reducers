@@ -1,6 +1,6 @@
 // This test code requires Node v6 or later.
 
-const better = require('.')
+const better = require('..')
 const assert = require('assert')
 const { combineReducers } = require('redux')
 
