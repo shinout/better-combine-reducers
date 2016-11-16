@@ -7,6 +7,9 @@
  *
  */
 
-import type { Reducer, State, Reducers, combineReducers } from 'redux'
+declare type State = Object;
+declare type Action = { type: $Subtype<string> }
+declare type Reducer<State, Action> = (state: State, action: Action) => State;
+declare type Reducers = {[key: $Keys<State>]: Reducer<any, Action>}
 
-declare export default function better(original: combineReducers): (reducers: Reducers, initialState: State) => Reducer<any, any>;
+declare export default function better(original: Function): (reducers: Reducers, initialState: State) => Reducer<any, any>;

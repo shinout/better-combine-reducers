@@ -1,6 +1,7 @@
 // @flow
 
-import type { State, Action } from 'redux'
+declare type State = Object;
+declare type Action = { type: $Subtype<string> }
 import { combineReducers } from 'redux'
 import better from 'better-combine-reducers'
 
