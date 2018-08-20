@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: 'circleci/node:6'
+    working_directory: ~/repo
+    steps:
+      - run: 'echo ''export PATH=./node_modules/.bin:$PATH'' >> $BASH_ENV'
+      - checkout
+      - run: npm install
+      - run: nca run nca notice update-modules
+      - run: npm test
+  deploy:
+    docker:
+      - image: 'circleci/node:6'
+    working_directory: ~/repo
+    steps:
+      - run: 'echo ''export PATH=./node_modules/.bin:$PATH'' >> $BASH_ENV'
+      - checkout
+      - run: git config --global user.name "CircleCI"
+      - run: git config --global user.email "circleci@cureapp.jp"
+      - run: npm install
+      - run: nca run nca notice update-modules
+      - run: npm test
+      - run: nca release --prefix v
+      - run: nca run nca notice gh-pages
+workflows:
+  version: 2
+  test_deploy:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+                - /release.*/
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - test
